@@ -66,6 +66,18 @@ It logs into Spotify in order to retrieve an access token. This token is only us
 
 I cannot use MusixMatch as their API is paid, and other solutions are the same, or not as accurate.
 
+# Content
+Images and lyrics are all downloaded at runtime. Whenever you listen to a song and there is no cover photo or lyrics saved. It will download it from spotify and cache it in the content folder.
+
+The amount of space used is very minimal, with my machine only taking up 47 MB in total for 1,360 images and 161 lyrics
+
+# Disclaimer
+Currently this repo is used for holding all the code, but this is not release-worthy yet.
+
+Any code you download right now is not the final version and is mostly in a debugging state
+
+If you wish to use this, you may download it right now and it will work like intended with some bugs and output info
+
 # Known Bugs
 1. Having to re-authenticate every ~1 hour
 2. Ratelimiting every once in a while for a long time
