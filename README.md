@@ -1,5 +1,5 @@
 # RBX_Spot-Plugin
-Roblox Studio plugin designed to show you're currently playing song during development
+Roblox Studio plugin designed to show your currently playing song during development
 
 Appears as a small widget which can be docked anywhere, with the smallest size being 300x400
 
@@ -19,16 +19,16 @@ Download [NodeJS](https://nodejs.org/en) which is used for hosting the server lo
 
 [dotenv](https://www.npmjs.com/package/dotenv) `Used to load the .env file, which stores private information like api key`
 
-[puppeteer](https://pptr.dev/) `Used to login to spotify to retrieve lyrics, if enabled in settings.`
+[puppeteer](https://pptr.dev/) `Used to login to spotify to retrieve lyrics, if enabled in settings`
 
 ### Command to install all packages at once
-`npm i puppeteer dotenv fast-average-color-node create-desktop-shortcuts axios`
+`npm i puppeteer dotenv fast-average-color-node create-desktop-shortcuts axios express`
 
 # Setup
 ### Files
 1. Create a empty folder which will hold all the files.
 2. Navigate to the new folder, and copy the installed files into it
-3. Edit settings.js to modify 2 settings to your preferences
+3. Edit settings.js to your preferences
 
 ### Spotify API
 1. Go to [Spotify Developer](https://developer.spotify.com/dashboard) and log in, creating an account if asked to
@@ -53,7 +53,27 @@ Whenever you want to use the plugin, navigate to the folder you dedicated and op
 
 Run the command `node index.js` to start the server, then navigate to the link outputted and authenticate
 
+If you changed the Port in the settings.js, make sure to change the port when connecting in the widget
+
 Press 'Connect to Spotify' in the widget when completed
 
+# Lyrics
+In order to get lyrics for a song, you must include your Spotify password and username in the .env file and set LyricsEnabled to true in settings.js
+
+The reasoning for this is that Spotify has no official API for retrieving these lyrics. Thus I use a undocumented spotify API, which I found off a [Stack Overflow](https://stackoverflow.com/questions/73704499/get-lyrics-data-from-spotify) post.
+
+It logs into Spotify in order to retrieve an access token. This token is only used for the lyric API as it requires authentication. No data is read or modified from your account
+
+I cannot use MusixMatch as their API is paid, and other solutions are the same, or not as accurate.
+
 # Known Bugs
-Having to re-authenticate every ~1 hour; Working on a fix soon
+1. Having to re-authenticate every ~1 hour
+2. Ratelimiting every once in a while for a long time
+3. Being able to click non-visible buttons in the widget
+4. Not being able to connect when logged in but no song playing
+
+# Todo
+1. Add option to widget to specify what port to use
+2. Clean up the code and optimize it
+3. Polish the widget interface and other things
+4. Add more error handling and notifications 
