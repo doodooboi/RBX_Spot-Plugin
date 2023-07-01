@@ -28,7 +28,20 @@ Download [NodeJS](https://nodejs.org/en) which is used for hosting the server lo
 ### Files
 1. Create a empty folder which will hold all the files.
 2. Navigate to the new folder, and copy the installed files into it
-3. Edit settings.js to your preferences
+3. Create a new file called exactly `.env`, just that and no name (see below)
+4. Edit settings.js to your preferences
+
+#### .env
+Paste this into your .env
+```
+# Do not share this file; It may contain your real password and username to spotify; if provided
+
+CLIENT_ID=
+CLIENT_SECRET=
+
+SPOTIFY_USERNAME=""
+SPOTIFY_PASSWORD=""
+```
 
 ### Spotify API
 1. Go to [Spotify Developer](https://developer.spotify.com/dashboard) and log in, creating an account if asked to
