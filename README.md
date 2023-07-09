@@ -92,10 +92,9 @@ Any code you download right now is not the final version and is mostly in a debu
 If you wish to use this, you may download it right now and it will work like intended with some bugs and output info
 
 # Known Bugs
-1. Having to re-authenticate every ~1 hour
-2. Ratelimiting every once in a while for a long time
-3. Being able to click non-visible buttons in the widget
-4. Not being able to connect when logged in but no song playing
+1. Ratelimiting every once in a while for a long time
+2. Being able to click non-visible buttons in the widget
+3. Not being able to connect when logged in but no song playing
 
 # Todo
 1. Add option to widget to specify what port to use
